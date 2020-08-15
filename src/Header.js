@@ -1,7 +1,14 @@
 import React from "react";
 
 const Header = () => {
-  return <div className="header">Phone Directory</div>;
+  const headerStyle = {
+    textAlign: "center",
+    padding: 20,
+    textTransform: "uppercase",
+    backgroundColor: "black",
+    color: "white",
+  };
+  return <div style={headerStyle}>Phone Directory</div>;
 };
 
 export default Header;
