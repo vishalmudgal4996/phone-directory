@@ -38,6 +38,7 @@ class App extends Component {
                 <div key={sub.id} className="grid-container">
                   <span className="grid-item">{sub.name}</span>
                   <span className="grid-item">{sub.phone}</span>
+                  <Button className="btn btn-danger">Delete</Button>
                 </div>
               );
             })}
