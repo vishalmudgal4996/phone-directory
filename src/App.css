@@ -12,7 +12,6 @@
   display: grid;
   grid-template-columns: 40% 30% auto;
   margin-bottom: 10px;
-  background-color: teal;
 }
 
 .heading-container {

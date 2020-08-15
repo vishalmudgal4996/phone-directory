@@ -7,31 +7,40 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    let subscribers = [
+      {
+        id: 1,
+        name: "Desmond Miles",
+        phone: 9999999999,
+      },
+      {
+        id: 2,
+        name: "Haytham Kenway",
+        phone: 8888888888,
+      },
+    ];
     return (
       <Fragment>
-        <Header />
-        <div className="component-body-container">
-          <Button className="btn btn-success">Add</Button>
-          <div className="grid-container heading-container">
-            <label className="grid-item name-heading" htmlFor="name">
-              Name
-            </label>
-            <input
-              id="name"
-              type="text"
-              placeholder="Your Name"
-              defaultValue="DesmonD"
-            ></input>
-            <br />
-            <label className="grid-item phone-heading" htmlFor="phone">
-              Phone
-            </label>
-            <input
-              id="phone"
-              type="number"
-              placeholder="Your Phone Number"
-              defaultValue="8888888888"
-            ></input>
+        <div className="component-container">
+          <Header />
+          <div className="component-body-container">
+            <Button className="btn btn-success">Add</Button>
+            <div className="grid-container heading-container">
+              <span className="grid-item name-heading" htmlFor="name">
+                Name
+              </span>
+              <span className="grid-item phone-heading" htmlFor="phone">
+                Phone
+              </span>
+            </div>
+            {subscribers.map((sub) => {
+              return (
+                <div key={sub.id} className="grid-container">
+                  <span className="grid-item">{sub.name}</span>
+                  <span className="grid-item">{sub.phone}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </Fragment>
