@@ -6,19 +6,26 @@ import Header from "./Header";
 import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      subscribersListToShow: [],
+    };
+  }
   render() {
-    let subscribers = [
-      {
-        id: 1,
-        name: "Desmond Miles",
-        phone: 9999999999,
-      },
-      {
-        id: 2,
-        name: "Haytham Kenway",
-        phone: 8888888888,
-      },
-    ];
+    // let subscribers = [
+    //   {
+    //     id: 1,
+    //     name: "Desmond Miles",
+    //     phone: 9999999999,
+    //   },
+    //   {
+    //     id: 2,
+    //     name: "Haytham Kenway",
+    //     phone: 8888888888,
+    //   },
+    // ];
+
     return (
       <Fragment>
         <div className="component-container">
@@ -33,7 +40,7 @@ class App extends Component {
                 Phone
               </span>
             </div>
-            {subscribers.map((sub) => {
+            {this.state.subscribersListToShow.map((sub) => {
               return (
                 <div key={sub.id} className="grid-container">
                   <span className="grid-item">{sub.name}</span>

@@ -6,7 +6,22 @@ import Header from "./Header";
 import "./AddSubscriber.css";
 
 class AddSubscriber extends Component {
+  constructor() {
+    super();
+    this.state = {
+      id: 0,
+      name: "",
+      phone: "",
+    };
+  }
+
+  inputChangedHandler = (e) => {
+    const state = this.state;
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  };
   render() {
+    const { name, phone } = this.state;
     return (
       <Fragment>
         <div className="component-container">
@@ -15,7 +30,7 @@ class AddSubscriber extends Component {
             <Button className="btn btn-secondary">Back</Button>
             <form className="subscriber-form">
               <div className="form-group">
-                <label htmlFor="name" className="label-control">
+                <label htmlFor="name" className="label-control" name="name">
                   Name:
                 </label>
                 <br />
@@ -25,10 +40,12 @@ class AddSubscriber extends Component {
                   id="name"
                   aria-describedby="emailHelp"
                   placeholder="Enter your name"
+                  name="name"
+                  onChange={this.inputChangedHandler}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="phone" className="label-control">
+                <label htmlFor="phone" className="label-control" name="phone">
                   Phone:
                 </label>
                 <br />
@@ -37,6 +54,8 @@ class AddSubscriber extends Component {
                   className="form-control input-control"
                   id="phone"
                   placeholder="Enter your phone"
+                  name="phone"
+                  onChange={this.inputChangedHandler}
                 />
               </div>
               <div className="subscriber-info-container">
@@ -44,9 +63,9 @@ class AddSubscriber extends Component {
                   Subscriber to be added:
                 </span>
                 <br />
-                <span className="subscriber-info">Name:</span>
+                <span className="subscriber-info">Name: {name}</span>
                 <br />
-                <span className="subscriber-info">Phone:</span>
+                <span className="subscriber-info">Phone: {phone}</span>
                 <br />
               </div>
               <button type="submit" className="btn btn-success">
