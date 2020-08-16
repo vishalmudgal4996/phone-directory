@@ -1,0 +1,9 @@
+.component-body-container {
+  padding: 20px;
+}
+
+.btn {
+  width: 80px;
+  border: none;
+  text-transform: uppercase;
+}
