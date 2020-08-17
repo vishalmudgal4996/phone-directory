@@ -3,29 +3,10 @@ import { Fragment } from "react";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
-import "./App.css";
+import "./ShowSubscribers.css";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      subscribersListToShow: [],
-    };
-  }
+class ShowSubscribers extends Component {
   render() {
-    // let subscribers = [
-    //   {
-    //     id: 1,
-    //     name: "Desmond Miles",
-    //     phone: 9999999999,
-    //   },
-    //   {
-    //     id: 2,
-    //     name: "Haytham Kenway",
-    //     phone: 8888888888,
-    //   },
-    // ];
-
     return (
       <Fragment>
         <div className="component-container">
@@ -40,7 +21,7 @@ class App extends Component {
                 Phone
               </span>
             </div>
-            {this.state.subscribersListToShow.map((sub) => {
+            {this.props.subscribersList.map((sub) => {
               return (
                 <div key={sub.id} className="grid-container">
                   <span className="grid-item">{sub.name}</span>
@@ -56,4 +37,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscribers;
