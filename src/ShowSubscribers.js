@@ -7,6 +7,10 @@ import "./ShowSubscribers.css";
 import { Link } from "react-router-dom";
 
 class ShowSubscribers extends Component {
+  onDeletedClick = (subscriberId) => {
+    this.props.deleteSubscriberHandler(subscriberId);
+  };
+
   render() {
     return (
       <Fragment>
@@ -29,7 +33,12 @@ class ShowSubscribers extends Component {
                 <div key={sub.id} className="grid-container">
                   <span className="grid-item">{sub.name}</span>
                   <span className="grid-item">{sub.phone}</span>
-                  <Button className="btn btn-danger">Delete</Button>
+                  <Button
+                    className="btn btn-danger"
+                    onClick={this.onDeletedClick.bind(this, sub.id)}
+                  >
+                    Delete
+                  </Button>
                 </div>
               );
             })}

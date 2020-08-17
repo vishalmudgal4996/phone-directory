@@ -57,6 +57,7 @@ class AddSubscriber extends Component {
                   placeholder="Enter your name"
                   name="name"
                   onChange={this.inputChangedHandler}
+                  required
                 />
               </div>
               <div className="form-group">
@@ -71,6 +72,7 @@ class AddSubscriber extends Component {
                   placeholder="Enter your phone"
                   name="phone"
                   onChange={this.inputChangedHandler}
+                  required
                 />
               </div>
               <div className="subscriber-info-container">
