@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import "./ShowSubscribers.css";
+import { Link } from "react-router-dom";
 
 class ShowSubscribers extends Component {
   render() {
@@ -12,7 +13,9 @@ class ShowSubscribers extends Component {
         <div className="component-container">
           <Header heading="Phone Directory" />
           <div className="component-body-container">
-            <Button className="btn btn-success">Add</Button>
+            <Link to="/subscriber">
+              <Button className="btn btn-success">Add</Button>
+            </Link>
             <div className="grid-container heading-container">
               <span className="grid-item name-heading" htmlFor="name">
                 Name

@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Header";
 import "./AddSubscriber.css";
+import { Link } from "react-router-dom";
 
 class AddSubscriber extends Component {
   constructor() {
@@ -26,6 +27,7 @@ class AddSubscriber extends Component {
     this.props.addSubscriberHandler(this.state);
     this.setState({ id: 0, name: "", phone: "" });
     e.target.reset();
+    this.props.history.push("/");
   };
 
   render() {
@@ -35,7 +37,9 @@ class AddSubscriber extends Component {
         <div className="component-container">
           <Header heading="Add Subscriber" />
           <div className="component-body-container">
-            <Button className="btn btn-secondary">Back</Button>
+            <Link to="/">
+              <Button className="btn btn-secondary">Back</Button>
+            </Link>
             <form
               className="subscriber-form"
               onSubmit={this.onFormSubmitted.bind(this)}
